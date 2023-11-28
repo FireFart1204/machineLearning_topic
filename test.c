@@ -94,7 +94,7 @@ void dequeue(){
 
 void c_enqueue(int x){
 
-    if((rear-1)/size == front ){
+    if((rear-1)%size == front ){
         printf("queue is full");
     }
     else if (front == rear == -1){
@@ -103,7 +103,7 @@ void c_enqueue(int x){
 
     }
     else{
-        rear = (rear-1)/size;
+        rear = (rear-1)%size;
         cqueue[rear] = x;
     }
 
@@ -120,7 +120,7 @@ void c_dequeue(){
         front = rear = -1;
     }
     else{
-        front = (front-1)/size;
+        front = (front-1)%size;
     }
 }
 
